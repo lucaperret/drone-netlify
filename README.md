@@ -2,11 +2,11 @@
 
 ![Netlify logo](netlify.png?raw=true "netlify.com")
 
+> Deploying to [Netlify](https://netlify.com) with [Drone](https://drone.io) CI.
+
 [![Docker Pulls](https://img.shields.io/docker/pulls/lucap/drone-netlify.svg)](https://hub.docker.com/r/lucap/drone-netlify/)
 [![Image](https://images.microbadger.com/badges/image/lucap/drone-netlify.svg)](https://microbadger.com/images/lucap/drone-netlify "Get your own image badge on microbadger.com")
 [![GitHub release](https://img.shields.io/github/release/lucaperret/drone-netlify.svg)](https://github.com/lucaperret/drone-netlify/releases/latest)
-
-Deploying to [Netlify](https://netlify.com) with [Drone](https://drone.io) CI.
 
 Use case examples:
 
