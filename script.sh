@@ -18,6 +18,17 @@ else
     NETLIFY_DEPLOY_OPTIONS="${NETLIFY_DEPLOY_OPTIONS} -p ./"
 fi
 
+if [ -z "$PLUGIN_TOKEN" ]
+then
+    if [ -z "$NETLIFY_TOKEN" ]
+    then
+        echo "> Error! token or netlify_token secret is required"
+        exit 1;
+    else
+        PLUGIN_TOKEN="$NETLIFY_TOKEN"
+    fi
+fi
+
 if [ -n "$PLUGIN_SITE_ID" ] && [ -n "$PLUGIN_TOKEN" ]
 then
     NETLIFY_SITE="-t $PLUGIN_TOKEN -s $PLUGIN_SITE_ID"
@@ -25,6 +36,7 @@ then
     netlify $NETLIFY_SITE deploy $NETLIFY_DEPLOY_OPTIONS;
 else
     echo "> Error! site_id and token are required"
+    exit 1
 fi
 
 if [ -n "$PLUGIN_SITE_NAME" ]
