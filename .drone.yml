@@ -1,0 +1,8 @@
+pipeline:
+  docker:
+    image: plugins/docker
+    secrets: [ docker_username, docker_password ]
+    repo: lucap/drone-netlify
+    auto_tag: true
+    when:
+      event: tag
