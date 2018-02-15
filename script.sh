@@ -43,4 +43,11 @@ then
     netlify $NETLIFY_SITE update $NETLIFY_UPDATE_OPTIONS;
 fi
 
-echo $'\n'"> Successfully deployed!"$'\n'
+rc=$?;
+if [[ $rc != 0 ]];
+then 
+    echo "> non-zero exit code $rc" &&
+    exit $rc
+else
+    echo $'\n'"> Successfully deployed!"$'\n'
+fi
